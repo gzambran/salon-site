@@ -1,0 +1,80 @@
+---
+import { productBrands } from '../data/services';
+
+const corteProducts = productBrands.filter(p => p.category === 'corte');
+const colorProducts = productBrands.filter(p => p.category === 'color');
+const tratamientosProducts = productBrands.filter(p => p.category === 'tratamientos');
+
+const categories = [
+  {
+    id: 'corte',
+    title: 'Corte',
+    products: corteProducts,
+  },
+  {
+    id: 'color',
+    title: 'Color',
+    products: colorProducts,
+  },
+  {
+    id: 'tratamientos',
+    title: 'Tratamientos',
+    products: tratamientosProducts,
+  },
+];
+---
+
+<section id="productos" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-heading font-semibold text-gray-900 mb-4">
+        Productos Premium
+      </h2>
+      <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Trabajamos exclusivamente con marcas de alta calidad para garantizar los mejores resultados
+      </p>
+    </div>
+
+    <!-- Products by Category -->
+    <div class="space-y-12">
+      {categories.map((category) => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <!-- Category Header -->
+          <div class="mb-6 pb-4 border-b border-gray-100">
+            <h3 class="text-2xl font-heading font-semibold text-gray-900">
+              {category.title}
+            </h3>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {category.products.map((product) => (
+              <div class="group p-4 rounded-xl bg-gray-50 hover:bg-gold/5 border border-transparent hover:border-gold/20 transition-all duration-300">
+                <h4 class="font-semibold text-gray-800 group-hover:text-gold transition-colors mb-2">
+                  {product.name}
+                </h4>
+                <p class="text-sm text-gray-500">
+                  {product.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Trust Badge -->
+    <div class="mt-16 text-center">
+      <div class="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-full shadow-sm border border-gray-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        <span class="text-gray-700 font-medium">
+          Productos profesionales de salón
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

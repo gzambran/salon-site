@@ -1,0 +1,79 @@
+/* Google Fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* Custom Theme */
+@theme {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-black: #0A0A0A;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8D48A;
+  --color-gold-dark: #B8962E;
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E5E5E5;
+  --color-gray-400: #9CA3AF;
+  --color-gray-600: #4A4A4A;
+  --color-gray-900: #1A1A1A;
+
+  /* Fonts */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-gray-600);
+  background-color: var(--color-white);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-gray-900);
+  font-weight: 600;
+}
+
+/* Gold gradient text utility */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button styles */
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-dark);
+}
+
+.btn-gold-outline {
+  border: 2px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.btn-gold-outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}

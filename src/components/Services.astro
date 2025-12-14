@@ -1,0 +1,68 @@
+---
+import { serviceCategories } from '../data/services';
+
+const formatPrice = (min: number, max?: number) => {
+  if (max) {
+    return `$${min} - $${max}`;
+  }
+  return `$${min}`;
+};
+---
+
+<section id="servicios" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-heading font-semibold text-gray-900 mb-4">
+        Nuestros Servicios
+      </h2>
+      <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        Ofrecemos una amplia gama de servicios profesionales para resaltar tu belleza natural
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {serviceCategories.map((category) => (
+        <div class="group bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-gold/30">
+          <!-- Category Header -->
+          <div class="mb-4">
+            <h3 class="text-xl font-heading font-semibold text-gray-900 group-hover:text-gold transition-colors">
+              {category.name}
+            </h3>
+          </div>
+
+          <!-- Services List -->
+          <ul class="space-y-4">
+            {category.services.map((service) => (
+              <li class="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
+                <div class="flex justify-between items-start gap-4">
+                  <div class="flex-1">
+                    <h4 class="font-medium text-gray-800 mb-1">
+                      {service.name}
+                    </h4>
+                    {service.description && (
+                      <p class="text-sm text-gray-500">
+                        {service.description}
+                      </p>
+                    )}
+                  </div>
+                  <span class="text-gold font-semibold whitespace-nowrap">
+                    {formatPrice(service.priceMin, service.priceMax)}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Note -->
+    <p class="text-center text-gray-500 text-sm mt-12">
+      * Los precios pueden variar según la longitud y tipo de cabello.
+      Consulta con nosotros para una cotización personalizada.
+    </p>
+  </div>
+</section>
