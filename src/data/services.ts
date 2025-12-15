@@ -166,11 +166,11 @@ export const productBrands: ProductBrand[] = [
 ];
 
 export const contactInfo = {
-  phone: 'PLACEHOLDER_PHONE', // PLACEHOLDER
-  whatsapp: 'PLACEHOLDER_PHONE', // PLACEHOLDER - same as phone or different
+  phone: '099-494-7575',
+  whatsapp: '5930994947575', // Ecuador country code + number without leading 0
   whatsappMessage: 'Hola, me gustaría agendar una cita en Susana Beauty Salón',
   address: 'Avenida Reales Tamarindo, Portoviejo, Ecuador',
-  hours: 'PLACEHOLDER_HOURS', // PLACEHOLDER - e.g., 'Lun-Sab 10am-6pm'
+  hours: 'Martes - Sábado 10am - 6pm',
   instagram: 'PLACEHOLDER_INSTAGRAM', // PLACEHOLDER
   facebook: 'PLACEHOLDER_FACEBOOK', // PLACEHOLDER
 };
