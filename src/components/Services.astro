@@ -7,6 +7,12 @@ const formatPrice = (min: number, max?: number) => {
   }
   return `$${min}`;
 };
+
+const brands = [
+  { name: 'Alfaparf Milano', logo: '/images/brands/alfaparf.svg', height: 'h-14 md:h-16' },
+  { name: 'Wella Professionals', logo: '/images/brands/wella.svg', height: 'h-14 md:h-16' },
+  { name: 'Olaplex', logo: '/images/brands/olaplex.svg', height: 'h-8 md:h-10' },
+];
 ---
 
 <section id="servicios" class="py-20 bg-white">
@@ -64,5 +70,24 @@ const formatPrice = (min: number, max?: number) => {
       * Los precios pueden variar según la longitud y tipo de cabello.
       Consulta con nosotros para una cotización personalizada.
     </p>
+
+    <!-- Brand Strip -->
+    <div class="mt-16 pt-12 border-t border-gray-100">
+      <p class="text-center text-gray-500 text-sm font-medium tracking-wide uppercase mb-8">
+        Trabajamos con marcas profesionales
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-10 md:gap-14">
+        {brands.map((brand) => (
+          <div class={`${brand.height} opacity-70`}>
+            <img
+              src={brand.logo}
+              alt={brand.name}
+              class="h-full w-auto"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
